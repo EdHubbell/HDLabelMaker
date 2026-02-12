@@ -1,0 +1,89 @@
+<Window x:Class="HDLabelMaker.Views.AssociationManagerWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Manage Product Associations" 
+        Height="600" Width="800"
+        WindowStartupLocation="CenterScreen">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="Product-Label Associations" 
+                   FontSize="18" FontWeight="Bold" Margin="0,0,0,10"/>
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="10"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <GroupBox Header="Existing Associations" Grid.Column="0">
+                <DataGrid ItemsSource="{Binding Associations}" 
+                          SelectedItem="{Binding SelectedAssociation}"
+                          AutoGenerateColumns="False"
+                          IsReadOnly="True"
+                          SelectionMode="Single">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Product Name" Binding="{Binding ProductName}" Width="*"/>
+                        <DataGridTextColumn Header="SKU" Binding="{Binding Sku}" Width="80"/>
+                        <DataGridTextColumn Header="Label" Binding="{Binding LabelFileName}" Width="120"/>
+                        <DataGridTextColumn Header="Count" Binding="{Binding DefaultCount}" Width="50"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </GroupBox>
+
+            <GroupBox Header="Association Details" Grid.Column="2">
+                <Grid Margin="10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <Label Content="SKU *" Grid.Row="0"/>
+                    <TextBox Text="{Binding Sku, UpdateSourceTrigger=PropertyChanged}" 
+                             Grid.Row="1" Margin="0,0,0,10"/>
+
+                    <Label Content="Barcode" Grid.Row="2"/>
+                    <TextBox Text="{Binding Barcode, UpdateSourceTrigger=PropertyChanged}" 
+                             Grid.Row="3" Margin="0,0,0,10"/>
+
+                    <Label Content="Product Name" Grid.Row="4"/>
+                    <TextBox Text="{Binding ProductName, UpdateSourceTrigger=PropertyChanged}" 
+                             Grid.Row="5" Margin="0,0,0,10"/>
+
+                    <Label Content="Label Template *" Grid.Row="6"/>
+                    <ComboBox ItemsSource="{Binding AvailableLabels}"
+                              SelectedItem="{Binding SelectedLabel}"
+                              DisplayMemberPath="DisplayName"
+                              Grid.Row="6" Margin="0,25,0,10"/>
+
+                    <Label Content="Default Print Count" Grid.Row="6" Margin="0,55,0,0"/>
+                    <TextBox Text="{Binding DefaultCount}" 
+                             Grid.Row="6" Margin="0,80,0,0" Width="60" HorizontalAlignment="Left"/>
+
+                    <StackPanel Grid.Row="6" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Bottom">
+                        <Button Content="Clear" Command="{Binding ClearCommand}" 
+                                Width="80" Margin="0,0,10,0"/>
+                        <Button Content="Delete" Command="{Binding DeleteCommand}" 
+                                Width="80" Margin="0,0,10,0" Background="#ffcccc"/>
+                        <Button Content="Save" Command="{Binding SaveCommand}" 
+                                Width="80" Background="#ccffcc"/>
+                    </StackPanel>
+                </Grid>
+            </GroupBox>
+        </Grid>
+
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,10,0,0">
+            <Button Content="Close" Click="CloseButton_Click" Width="100"/>
+        </StackPanel>
+    </Grid>
+</Window>

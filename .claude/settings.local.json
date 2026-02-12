@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(dotnet build:*)",
+      "Bash(dir:*)",
+      "Bash(git -C \"C:\\\\Development\\\\GSDware\\\\HDLabelMaker\" status)",
+      "Bash(git -C \"C:\\\\Development\\\\GSDware\\\\HDLabelMaker\" diff)",
+      "Bash(git -C \"C:\\\\Development\\\\GSDware\\\\HDLabelMaker\" log --oneline -5)",
+      "Bash(git -C \"C:\\\\Development\\\\GSDware\\\\HDLabelMaker\" add .gitignore ReadMe.md App.xaml App.xaml.cs AssemblyInfo.cs HDLabelMaker.csproj MainWindow.xaml MainWindow.xaml.cs Models/ Resources/ Services/ ViewModels/ Views/ .claude/)"
+    ]
+  }
+}
