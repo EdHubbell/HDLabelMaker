@@ -7,6 +7,8 @@ This is a bullshit little app I made to print labels because Home Depot refused 
 At last count, there were 5 different policies. It's a lot for a consumer to keep up with. Store credit would have been a 'both sides win' way to 
 handle this.
 
+Anyway, if you need a generator, there's one in my garage. Unopened. 
+
 ## Features
 
 - **Product Search**: Search by SKU, barcode, or product name
