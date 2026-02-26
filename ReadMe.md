@@ -2,7 +2,7 @@
 
 A Windows desktop application for printing 3" x 2" warning labels on Star TSP100 thermal transfer printers at Home Depot stores.
 
-This is a bs little app I made to print labels because Home Depot initially refused return an unopened generator 11 days after purchase. They have since made good via store credit, and I hold no ill will toward them.   
+This is a bs little app I made to print labels because Home Depot initially refused return an unopened generator 11 days after purchase. They have since made good via store credit, and I remain a loyal customer.   
 
 ## Features
 
